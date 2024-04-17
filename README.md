@@ -1,2 +1,2 @@
-# LP1---Entrega-1---Sara-Megumi-Sakai-dos-Santos
+# Python
  Explorador da tabela periódica
