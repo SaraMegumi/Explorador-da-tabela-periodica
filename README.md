@@ -1,2 +1,2 @@
 # Python
- Explorador da tabela periódica
+ Python Orientado a objetos
