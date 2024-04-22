@@ -1,6 +1,9 @@
 elementos_quimicos = []
 def inserir_elemento_quimico(elemento_quimico): elementos_quimicos.append(elemento_quimico)
 def obter_elementos_quimicos(): return elementos_quimicos
+def get_elementos_quimicos(): return elementos_quimicos
+
+
 
 
 def selecionar_elementos_quimicos(max_massa_atomica=None, prefixo_elemento=None, min_numero_atomico=None ):

@@ -1,7 +1,9 @@
 from util.gerais import mostrar_objetos
 from entidades.pesquisador import (inserir_pesquisador, obter_pesquisadores, selecionar_pesquisadores, Pesquisador)
 from entidades.elemento_quimico import (inserir_elemento_quimico, obter_elementos_quimicos, selecionar_elementos_quimicos,
-                                        ElementoQuimico)
+                                        ElementoQuimico, get_elementos_quimicos)
+from entidades.elemento_quimico import  ElementoQuimico
+from entidades.grupo import inserir_grupo, Grupo, get_grupos, obter_grupos
 def cadastrar_elementos_quimicos():
     inserir_elemento_quimico(ElementoQuimico(nome='Hidrogênio', simbolo='H', numero_atomico=1, massa_atomica=1.01))
     inserir_elemento_quimico(ElementoQuimico('Hélio', 'He', 2, 4.0))
@@ -25,6 +27,15 @@ def cadastrar_pesquisador():
                                     'Estados Unidos', True))
     inserir_pesquisador(Pesquisador('Henry Moseley', 1887, 'Universidade de Oxford',
                                     'Reino Unido', False))
+
+def cadastrar_grupos():
+    grupo = Grupo(nome='Metais Alcalinos')
+    inserir_grupo(grupo)
+    grupo.inserir_elemento_quimico(elemento_quimico(nome='Lítio', simbolo='Li', numero_atomico=3, massa_atomica=6.94))
+    grupo = Grupo(nome='Metais Alcalinos Terrosos')
+    inserir_grupo(grupo)
+    grupo.inserir_elemento_quimico(elemento_quimico(nome='Berílio', simbolo = 'Be',numero_atomico=4, massa_atomica=9.01))
+
 
 
 if __name__ == '__main__':
@@ -59,3 +70,9 @@ if __name__ == '__main__':
 
     pesquisadores_selecionados, filtros = selecionar_pesquisadores(True, 1900, prefixo_nome='L')
     mostrar_objetos(cabecalho='\n' + cabecalho, lista=pesquisadores_selecionados, filtros=filtros)
+
+    cadastrar_grupos()
+    cabecalho = 'Grupos: Nome '
+    mostrar_objetos(cabecalho='\n' + cabecalho, lista=obter_grupos())
+    pesquisadores_selecionados, filtros = selecionar_grupo()
+    mostrar_objetos(cabecalho='\n' + cabecalho, lista=grupos_selecionados, filtros=filtros)
